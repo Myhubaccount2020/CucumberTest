@@ -27,7 +27,7 @@ public class Amazon {
         emailPhoneNum.sendKeys("mouradikhlef1979@gmail.com");
         driver.findElement(By.xpath("//input[@id='continue']")).click();
         WebElement Password = driver.findElement(By.id("ap_password"));
-        Password.sendKeys("Shopamazonsteeve19792020");
+        Password.sendKeys("testpwd");
         driver.findElement(By.id("signInSubmit")).click();
 
     }
