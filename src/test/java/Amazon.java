@@ -18,17 +18,13 @@ public class Amazon {
         driver.manage().window().maximize();
         Assert.assertTrue(driver.getCurrentUrl().contains("https://www.amazon.com/"));
         driver.findElement(By.id("nav-link-accountList")).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         WebElement emailPhoneNum = driver.findElement(By.id("ap_email"));
         emailPhoneNum.sendKeys("mouradikhlef1979@gmail.com");
         driver.findElement(By.xpath("//input[@id='continue']")).click();
         WebElement Password = driver.findElement(By.id("ap_password"));
-        Password.sendKeys("testpwd");
+        Password.sendKeys("validpassword");
         driver.findElement(By.id("signInSubmit")).click();
+        Assert.assertTrue(driver.findElement(By.xpath("//span[text()='Hello, mourad']")).isDisplayed());
 
     }
 
