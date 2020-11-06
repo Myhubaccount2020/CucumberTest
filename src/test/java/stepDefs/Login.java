@@ -33,4 +33,17 @@ public class Login {
         Assert.assertTrue(driver.findElement(By.xpath("//div[text()='The email or phone number you’ve entered doesn’t match any account. ']")).isDisplayed());
 
     }
+
+    @And("User logs in with {string},{string}")
+    public void userLogsInWith(String user, String pass) {
+        driver.findElement(By.id("email")).sendKeys(user);
+        driver.findElement(By.id("pass")).sendKeys(pass);
+        driver.findElement(By.name("login")).click();
+    }
+
+
+    @Then("user should see  error message")
+    public void userShouldSeeErrorMessage() {
+    }
+
 }
